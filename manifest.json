@@ -1,0 +1,26 @@
+
+{
+    "manifest_version": 2,
+  
+    "name": "Bookmark Util",
+    "description": "This extension helps you organize your bookmarks efficiently",
+    "version": "1.0",
+    "icons": {
+      "128": "res/images/BookUtil_128.png",
+      "48": "res/images/BookUtil_48.png",
+      "16": "res/images/BookUtil_16.png"
+    },
+  
+    "background": {
+      "scripts": ["src/bookmark.js"],
+      "persistent": false
+    },
+  
+    "permissions": [
+            "storage",
+            "notifications",
+            "contextMenus"
+          ],
+  
+    "options_page": "bookmark.html"
+  }
