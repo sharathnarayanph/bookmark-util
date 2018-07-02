@@ -1,5 +1,13 @@
 $(function () {
 
+    //Load list during load
+    $(function () {
+        chrome.storage.sync.get('limit', function (data) {
+            generateList(data.configData);
+        });
+    });
+
+    //Save config data in chrome storage
     $("#saveConfig").click(function () {
         var configData = [];
         var key, value;
@@ -18,6 +26,7 @@ $(function () {
         }
     });
 
+    //Add new row
     $("#addRow").click(function () {
         var element;
         var id;
@@ -45,5 +54,23 @@ $(function () {
         }
     });
 
+    function generateList(configData) {
+        var content;
+
+        for (var i = 0; i < configData.length; i++) {
+            content = "<tr><td>" + (parseInt(i) + 1) + "</td>";
+            content += "<td><input type=\"text\"";
+            content += "value=\"" + configData[i].folder + "\" placeholder=\"Enter folder name\" /></td>";
+            content += "<td><input type=\"text\"";
+            content += "value=\"" + configData[i].keywords + "\" placeholder=\"Enter keywords separated by comma\" /></td>";
+
+            if (i == 0) {
+                $('#configTbl tbody').append(content);
+            }
+            else {
+                $('#configTbl tr:last').after(content);
+            }
+        }
+    }
 });
 
