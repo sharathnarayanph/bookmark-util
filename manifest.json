@@ -22,5 +22,5 @@
             "contextMenus"
           ],
   
-    "options_page": "bookmark.html"
+    "options_page": "view/configure.html"
   }
