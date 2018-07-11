@@ -12,14 +12,15 @@
     },
   
     "background": {
-      "scripts": ["src/bookmark.js"],
+      "scripts": ["res/js/jQuery.js", "src/bookmark.js"],
       "persistent": false
     },
   
     "permissions": [
             "storage",
             "notifications",
-            "contextMenus"
+            "contextMenus",
+            "bookmarks"
           ],
   
     "options_page": "/view/configure.html"

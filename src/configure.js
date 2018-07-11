@@ -2,7 +2,7 @@ $(function () {
 
     //Load list during load
     $(function () {
-        chrome.storage.sync.get('limit', function (data) {
+        chrome.storage.sync.get("configData", function (data) {
             generateList(data.configData);
         });
     });
